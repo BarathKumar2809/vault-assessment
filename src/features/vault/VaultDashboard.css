@@ -1,0 +1,241 @@
+.vault-dashboard {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+    #0a0a0a;
+  display: flex;
+  flex-direction: column;
+}
+
+.vault-header {
+  background: rgba(20, 20, 20, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.vault-title h1 {
+  margin: 0 0 2px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.vault-stats {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.vault-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.add-secret-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Change Password button - visually consistent with primary action but smaller */
+.change-password-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #f6c244 0%, #f97316 100%);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.change-password-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+}
+
+.add-secret-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.5);
+}
+
+.lock-btn, .home-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lock-btn:hover, .home-btn:hover {
+  border-color: #ec4899;
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.home-btn {
+  background: rgba(236, 72, 153, 0.1);
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+.home-btn:hover {
+  background: rgba(236, 72, 153, 0.2);
+  border-color: #ec4899;
+  transform: translateY(-1px);
+}
+
+.vault-controls {
+  padding: 32px 32px 24px 32px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.secrets-list {
+  flex: 1;
+  padding: 0 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  color: #a0a0a0;
+  padding: 20px;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 80px;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.empty-state p {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  color: #a0a0a0;
+}
+
+@media (max-width: 768px) {
+  .vault-header {
+    padding: 16px 20px;
+  }
+
+  .vault-title h1 {
+    font-size: 20px;
+  }
+
+  .vault-actions {
+    gap: 8px;
+  }
+
+  .add-secret-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .lock-btn, .home-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .vault-controls {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .secrets-list {
+    padding: 0 20px 20px 20px;
+  }
+
+  .empty-state {
+    min-height: 300px;
+    padding: 20px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .lock-btn span, .home-btn span {
+    display: none;
+  }
+
+  .lock-btn, .home-btn {
+    padding: 8px;
+  }
+
+  .empty-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+  }
+
+  .empty-state h3 {
+    font-size: 18px;
+  }
+
+  .empty-state p {
+    font-size: 14px;
+  }
+}
+
+
+
+

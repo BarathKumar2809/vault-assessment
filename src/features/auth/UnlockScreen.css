@@ -1,0 +1,438 @@
+.unlock-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+    #0a0a0a;
+  padding: 20px;
+}
+
+.unlock-container {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 48px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.unlock-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.vault-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: #ec4899;
+}
+
+.vault-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.unlock-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.subtitle {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.unlock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 44px 12px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: #606060;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ec4899;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
+}
+
+.form-group input:disabled {
+  background-color: rgba(255, 255, 255, 0.02);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #808080;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover {
+  color: #ec4899;
+}
+
+.toggle-password:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.toggle-password svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.strength-fill.strength-weak {
+  background: linear-gradient(90deg, #f56565 0%, #fc8181 100%);
+}
+
+.strength-fill.strength-medium {
+  background: linear-gradient(90deg, #ed8936 0%, #f6ad55 100%);
+}
+
+.strength-fill.strength-strong {
+  background: linear-gradient(90deg, #48bb78 0%, #68d391 100%);
+}
+
+.strength-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.strength-text {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.strength-text.strength-weak {
+  color: #f87171;
+}
+
+.strength-text.strength-medium {
+  color: #fb923c;
+}
+
+.strength-text.strength-strong {
+  color: #4ade80;
+}
+
+.strength-requirements {
+  font-size: 11px;
+  color: #808080;
+  text-align: right;
+  flex: 1;
+}
+
+.error-message {
+  padding: 12px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 14px;
+  text-align: center;
+}
+
+.security-notice {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #fbbf24;
+  line-height: 1.5;
+}
+
+.security-notice svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #fbbf24;
+}
+
+.security-notice p {
+  margin: 0;
+}
+
+.unlock-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 8px;
+}
+
+.unlock-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.5);
+}
+
+.unlock-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.unlock-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: #ec4899;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.forgot-password-link:hover:not(:disabled) {
+  color: #db2777;
+}
+
+.forgot-password-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reset Link */
+.unlock-footer {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.reset-link {
+  background: none;
+  border: none;
+  color: #ec4899;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.reset-link:hover:not(:disabled) {
+  color: #db2777;
+}
+
+.reset-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reset Confirmation Modal */
+.reset-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  animation: fadeIn 0.2s;
+}
+
+.reset-confirm-modal {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.98) 0%, rgba(20, 20, 20, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s;
+  text-align: center;
+}
+
+.reset-confirm-modal h3 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.reset-confirm-modal p {
+  margin: 0 0 24px 0;
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.reset-confirm-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.reset-confirm-buttons button {
+  flex: 1;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.cancel-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+  border: none;
+  color: white;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 101, 101, 0.4);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .unlock-container {
+    padding: 32px 24px;
+  }
+
+  .unlock-header h1 {
+    font-size: 24px;
+  }
+
+  .reset-modal {
+    padding: 24px;
+  }
+
+  .reset-modal-actions {
+    flex-direction: column;
+  }
+}
+
+
